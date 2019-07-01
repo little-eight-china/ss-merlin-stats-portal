@@ -13,7 +13,7 @@ module.exports = {
     proxyTable: {
       // 跨域用
       '/api':{
-          target: "http://ss-merlin-stats.iloli.li",
+          target: "https://ss-merlin-stats.iloli.li",
           changeOrigin:true,
           pathRewrite:{
               '^/api':''

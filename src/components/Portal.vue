@@ -26,14 +26,18 @@ export default {
   methods: {
     refresh () {
       this.$axios.get('/stats').then(res => {
-        console.log(res)
+        let data = res.data[0]
+        this.hash = data.hash
+        this.count = data.count
       })
     }
   },
   mounted () {
     let _this = this
     _this.$axios.get('/stats').then(res => {
-      console.log(res)
+      let data = res.data[0]
+      _this.hash = data.hash
+      _this.count = data.count
     })
   }
 }
