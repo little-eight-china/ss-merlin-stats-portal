@@ -11,9 +11,9 @@ var app = new Vue({
         loadData: function () {
             axios.get('https://ss-merlin.iloli.li/stats')
                 .then(function (response) {
-                    let status = JSON.parse(response)
-                    self.totalUser = status.reduce((a, b) => a + b.count, 0)
-                    self.stats = status
+                    console.log(response)
+                    self.totalUser = response.reduce((a, b) => a + b.count, 0)
+                    self.stats = response
                 })
                 .catch(function (error) {
                     console.error(error)
