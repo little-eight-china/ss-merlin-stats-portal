@@ -1,12 +1,96 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html class="no-js" lang="en">
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title></title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+    <title>ss-merlin statistics</title>
+    <meta name="description" content="ss-merlin statistics">
+    <meta name="author" content="Acris">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+<!-- home
+================================================== -->
+<main class="s-home s-home--slides" id="app">
+    <div class="home-slider">
+        <div class="home-slider-img" style="background-image: url(images/slides/slide-01.jpg);"></div>
+        <div class="home-slider-img" style="background-image: url(images/slides/slide-02.jpg);"></div>
+        <div class="home-slider-img" style="background-image: url(images/slides/slide-03.jpg);"></div>
+    </div>
+
+    <div class="overlay"></div>
+
+    <div class="home-content">
+        <div class="home-logo">
+            <a href="index.html">
+                <img src="images/logo.svg" alt="Homepage">
+            </a>
+        </div>
+
+        <div class="row home-content__main">
+            <div class="col-seven home-content__text pull-right">
+                <h3>ss-merlin statistics</h3>
+
+                <h5 v-for="item in stats">{{ item.version }}: {{ item.count }} users</h5>
+            </div>  <!-- end home-content__text -->
+
+            <div class="col-five home-content__counter">
+                <h3>ss-merlin total have</h3>
+                <div class="home-content__clock">
+                    <div class="top">
+                        <div class="time days">{{ totalUser }} <span>users</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <ul class="home-social">
+            <li>
+                <a href="https://github.com/Acris/shadowsocks-asuswrt-merlin" target="_blank">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                    <span>GitHub</span>
+                </a>
+            </li>
+        </ul> <!-- end home-social -->
+        <div class="row home-copyright">
+            <span>Copyright &copy; 2019 ss-merlin</span>
+            <span>Design by styleshout</span>
+        </div> <!-- end home-copyright -->
+        <div class="home-content__line"></div>
+    </div> <!-- end home-content -->
+</main> <!-- end s-home -->
+
+<!-- preloader
+================================================== -->
+<div id="preloader">
+    <div id="loader">
+        <div class="line-scale-pulse-out">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+
+<!-- Java Script
+================================================== -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios@0.19.0/dist/axios.min.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+<script src="js/data.js"></script>
+
+</body>
+
 </html>
