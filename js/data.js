@@ -12,8 +12,8 @@ var app = new Vue({
             axios.get('https://ss-merlin.iloli.li/stats')
                 .then(function (response) {
                     let data = response.data
-                    self.totalUser = data.reduce((a, b) => a + b.count, 0)
-                    self.stats = data
+                    this.totalUser = data.reduce((a, b) => a + b.count, 0)
+                    this.stats = data
                 })
                 .catch(function (error) {
                     console.error(error)
