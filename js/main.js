@@ -50,7 +50,7 @@
             for (let i = 0; i < stats.length; i++) {
                 let version = stats[i].version
                 let count = stats[i].count
-                let statsContent = version + ': ' + count + (count > 1 ? 'users' : 'user')
+                let statsContent = version + ': ' + count + ' ' + (count > 1 ? 'users' : 'user')
                 statsHtml += '<h5>' + statsContent + '</h5>'
             }
             $("#ss-merlin-statistics").html(statsHtml)
