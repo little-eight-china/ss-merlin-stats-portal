@@ -4,21 +4,15 @@ var app = new Vue({
         totalUser: 0,
         stats: []
     },
-    mounted () {
+    mounted() {
         this.loadData()
     },
     methods: {
-        async loadData () {
-            await axios.get('https://ss-merlin.iloli.li/stats')
-                .then(function (response) {
-                    console.log(response)
-                    let data = response.data
-                    this.totalUser = data.reduce((a, b) => a + b.count, 0)
-                    this.stats = data
-                })
-                .catch(function (error) {
-                    console.error(error)
-                });
+        async loadData() {
+            let response = await axios.get('https://ss-merlin.iloli.li/stats')
+            let data = response.data
+            this.totalUser = data.reduce((a, b) => a + b.count, 0)
+            this.stats = data
         }
     }
 })
