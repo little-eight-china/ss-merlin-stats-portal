@@ -41,6 +41,23 @@
         });
     };
 
+    /* load data
+     * -------------------------------------------------- */
+    var ssLoadData = function () {
+        $.get("https://ss-merlin.iloli.li/stats", function (stats) {
+            let totalUser = stats.reduce((a, b) => a + b.count, 0)
+            let statsHtml = '<h3>ss-merlin statistics</h3>'
+            for (let i = 0; i < stats.length; i++) {
+                let version = stats[i].version
+                let count = stats[i].count
+                let statsContent = version + ': ' + count + ' ' + (count > 1 ? 'users' : 'user')
+                statsHtml += '<h5>' + statsContent + '</h5>'
+            }
+            $("#ss-merlin-statistics").html(statsHtml)
+            $("#total-user").html(totalUser + ' <span>' + (totalUser > 1 ? 'users' : 'user') + '</span>')
+        });
+    };
+
     /* slick slider
      * ------------------------------------------------------ */
     var ssSlickSlider = function () {
@@ -66,11 +83,10 @@
     /* initialize
      * ------------------------------------------------------ */
     (function ssInit() {
-
         ssPreloader();
         ssSlickSlider();
         ssPlaceholder();
-
+        ssLoadData();
     })();
 
 
